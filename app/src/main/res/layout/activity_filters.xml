@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSecondary"
+    tools:context=".filters">
+
+
+    <!-- Header Start-->
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:background="@drawable/border_top"
+        android:gravity="center">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="bottom">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:text="@string/filter"
+                android:textSize="@dimen/_25sdp" />
+
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@android:color/transparent"
+                android:text="@string/icon_cross"
+                android:textSize="@dimen/_20sdp"
+                android:layout_alignParentLeft="true" />
+
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="@dimen/_45sdp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:background="@android:color/transparent"
+                android:text="@string/reset"
+                android:textAlignment="center"
+                android:textSize="@dimen/_9sdp"
+                android:layout_alignParentRight="true" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+    <!-- Header End-->
+
+    <!-- Body Start-->
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/header"
+        android:fillViewport="true">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <!--<TableRow>-->
+
+                <!--<RadioButton-->
+                    <!--android:id="@+id/radioForSale"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="@string/sale"-->
+                    <!--android:layout_marginLeft="@dimen/_18sdp"-->
+                    <!--android:layout_marginTop="@dimen/_10sdp"-->
+                    <!--/>-->
+
+                <!--<RadioButton-->
+                    <!--android:id="@+id/radioForRent"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="@string/rent"-->
+                    <!--android:layout_marginLeft="@dimen/_22sdp"-->
+                    <!--android:layout_marginTop="@dimen/_10sdp"/>-->
+
+
+            <!--</TableRow>-->
+
+            <TableRow>
+
+                <RadioButton
+                    android:id="@+id/radioResidencial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:text="@string/residential"
+                    android:layout_marginLeft="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_5sdp"/>
+
+                <RadioButton
+                    android:id="@+id/radioCommerecial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/commercial"
+                    android:layout_marginLeft="@dimen/_22sdp"
+                    android:layout_marginTop="@dimen/_5sdp"/>
+
+            </TableRow>
+
+            <!-- Type Start-->
+            <LinearLayout
+                android:id="@+id/typeLinear">
+                <TextView
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Type"/>
+            </LinearLayout>
+
+            <TableRow
+                android:id="@+id/typeRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <Spinner
+                    android:layout_weight="1"
+                    android:id="@+id/typeSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/dropDown"
+                    android:prompt="@string/choose"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined">
+
+                </Spinner>
+            </TableRow>
+
+            <!-- Area Start-->
+
+            <LinearLayout
+                android:id="@+id/areaLinear"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/_160sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Min. area" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Max. are" />
+
+            </LinearLayout>
+
+            <TableRow
+                android:id="@+id/areaRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <Spinner
+                    android:layout_weight="1"
+                    android:id="@+id/minAreaSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/dropDown"
+                    android:prompt="@string/choose"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined">
+
+                </Spinner>
+
+                <Spinner
+                    android:layout_weight="1"
+                    android:id="@+id/maxAreaSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/dropDown"
+                    android:prompt="@string/choose"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined">
+
+                </Spinner>
+            </TableRow>
+
+            <!-- Bedrooms Start-->
+
+            <LinearLayout
+                android:id="@+id/bedroomsLinear"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/_160sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Min. bedrooms" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Max. bedrooms" />
+
+            </LinearLayout>
+
+            <TableRow
+                android:id="@+id/bedroomsRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <Spinner
+                    android:layout_weight="1"
+                    android:id="@+id/minBedroomSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/dropDown"
+                    android:prompt="@string/choose"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined">
+
+                </Spinner>
+
+                <Spinner
+                    android:layout_weight="1"
+                    android:id="@+id/maxBedroomsSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/dropDown"
+                    android:prompt="@string/choose"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined">
+
+                </Spinner>
+            </TableRow>
+
+            <!-- Furnishing Start-->
+
+            <LinearLayout
+                android:id="@+id/furnishingLinear">
+                <TextView
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Furnishing"/>
+            </LinearLayout>
+
+            <TableRow
+                android:id="@+id/furnishingRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <Spinner
+                    android:layout_weight="1"
+                    android:id="@+id/furnishingSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/dropDown"
+                    android:prompt="@string/choose"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined">
+
+                </Spinner>
+            </TableRow>
+
+            <!-- Payment Start-->
+
+            <LinearLayout
+                android:id="@+id/paymentLinear">
+                <TextView
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Payment"/>
+            </LinearLayout>
+
+            <TableRow
+                android:id="@+id/paymentRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <Spinner
+                    android:layout_weight="1"
+                    android:id="@+id/paymentSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/dropDown"
+                    android:prompt="@string/choose"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined">
+
+                </Spinner>
+            </TableRow>
+
+            <!-- Price Start-->
+
+            <LinearLayout
+                android:id="@+id/priceLinear"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="@dimen/_160sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Min. Price" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Max. Price" />
+
+            </LinearLayout>
+
+            <TableRow
+                android:id="@+id/priceRow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <Spinner
+                    android:layout_weight="1"
+                    android:id="@+id/minPriceSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/dropDown"
+                    android:prompt="@string/choose"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined">
+
+                </Spinner>
+
+                <Spinner
+                    android:layout_weight="1"
+                    android:id="@+id/maxPriceSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/dropDown"
+                    android:prompt="@string/choose"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined">
+
+                </Spinner>
+            </TableRow>
+
+        </TableLayout>
+
+    </ScrollView>
+
+    <!-- Footer Start-->
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/border_bottom"
+        android:gravity="center"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_gravity="bottom"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+            <Button
+                android:id="@+id/filterSearch"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Search"
+                android:textAlignment="center"
+                android:textSize="@dimen/_22sdp"
+                android:background="@color/colorPrimary"/>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <!-- Footer End-->
+
+</RelativeLayout>
+    <!-- Body End-->

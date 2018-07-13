@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSecondary"
+    tools:context=".Saved_Fragment">
+
+    <!-- Header Start-->
+    <RelativeLayout
+
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:background="@drawable/border_top"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="match_parent"
+            android:text="@string/saved"
+            android:textStyle="bold"
+
+            android:textColor="@color/colorPrimary"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textSize="@dimen/_20sdp"
+            />
+
+    </RelativeLayout>
+    <!-- Header End-->
+
+
+    <!--&lt;!&ndash; Footer Start&ndash;&gt;-->
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/footer"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/_40sdp"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:background="@drawable/border_bottom"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_gravity="center">-->
+
+        <!--<LinearLayout-->
+            <!--android:orientation="horizontal"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_alignParentBottom="true"-->
+            <!--android:layout_alignParentLeft="true"-->
+            <!--android:layout_alignParentStart="true"-->
+            <!--&gt;-->
+
+            <!--<Button-->
+                <!--android:id="@+id/btnSearch"-->
+                <!--android:layout_width="@dimen/_30sdp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="@drawable/blacksearch"-->
+                <!--android:layout_marginLeft="@dimen/_25sdp"-->
+                <!--/>-->
+
+            <!--<Button-->
+                <!--android:id="@+id/btnSaved"-->
+                <!--android:layout_width="@dimen/_30sdp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="@drawable/blacksaved"-->
+                <!--android:layout_marginLeft="@dimen/_85sdp"-->
+                <!--/>-->
+
+            <!--<Button-->
+                <!--android:id="@+id/btnSettings"-->
+                <!--android:layout_width="@dimen/_30sdp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:background="@drawable/blacksettings"-->
+                <!--android:layout_gravity="end"-->
+                <!--android:layout_marginLeft="@dimen/_90sdp"/>-->
+
+        <!--</LinearLayout>-->
+    <!--</RelativeLayout>-->
+    <!--&lt;!&ndash; Footer End&ndash;&gt;-->
+
+</RelativeLayout>

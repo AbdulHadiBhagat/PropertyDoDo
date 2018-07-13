@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BuyPropertyDetail_Fragment">
+
+
+    <!-- Header Start-->
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center"
+        android:background="@drawable/border_top"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="top">
+
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/icon_back"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_20sdp"
+                style="?android:attr/buttonBarButtonStyle"
+                />
+
+            <Button
+                android:id="@+id/btnHeart"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_150sdp"
+                android:layout_marginStart="@dimen/_150sdp"
+                android:text="@string/icon_heart"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_20sdp" />
+
+            <Button
+                android:id="@+id/btnShare"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/icon_share"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_20sdp" />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+    <!-- Header End-->
+
+
+    <!-- Footer Start-->
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_38sdp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/border_bottom"
+        android:gravity="center"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            >
+
+            <Button
+                android:id="@+id/btnSms"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:text="@string/icon_sms"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                style="?android:attr/buttonBarButtonStyle"
+                />
+
+            <Button
+                android:id="@+id/btnCall"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:text="@string/icon_call"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_85sdp"
+                android:layout_marginStart="@dimen/_85sdp"
+                style="?android:attr/buttonBarButtonStyle"
+                />
+
+            <Button
+                android:id="@+id/btnEmail"
+                android:layout_width="@dimen/_50sdp"
+                android:layout_height="match_parent"
+                android:text="@string/icon_email"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_70sdp"
+                android:layout_marginStart="@dimen/_70sdp"
+                style="?android:attr/buttonBarButtonStyle"
+                />
+
+        </LinearLayout>
+    </RelativeLayout>
+    <!-- Footer End-->
+
+</RelativeLayout>
