@@ -14,16 +14,35 @@ import android.widget.Spinner;
 import android.widget.TableRow;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
 public class filters extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
     private Button btnBack;
-    private Spinner spinner_type;
+    private String finalResult;
+    private Spinner typeSpinner, minAreaSpinner, maxAreaSpinner, minBedroomSpinner, maxBedroomSpinner, furnishingSPinner,
+            paymentSpinner, minPriceSpinner, maxPriceSpinner;
     private LinearLayout bedroomsLinear, furnishingLinear, paymentLinear;
     private TableRow bedroomsRow, furnishingRow, paymentRow;
     private RadioButton radioCommercial, radioResidential;
     private String category, subCategory = null;
+
+    private JSONArray array;
+    ArrayList<FiltersFurnishing> furnishing;
+    String[] furnishings;
+
+    ArrayAdapter<String> furnishingAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +52,17 @@ public class filters extends AppCompatActivity implements CompoundButton.OnCheck
         category = intent.getStringExtra("category");
         Typeface font = Typeface.createFromAsset(getAssets(), "fonts/fontawesome-webfont.ttf");
         btnBack = (Button) findViewById(R.id.btnBack);
+
+        typeSpinner = (Spinner) findViewById(R.id.typeSpinner);
+        minAreaSpinner = (Spinner) findViewById(R.id.minAreaSpinner);
+        maxAreaSpinner = (Spinner) findViewById(R.id.maxAreaSpinner);
+        minBedroomSpinner = (Spinner) findViewById(R.id.minBedroomSpinner);
+        maxBedroomSpinner = (Spinner) findViewById(R.id.maxBedroomsSpinner);
+        furnishingSPinner = (Spinner) findViewById(R.id.furnishingSpinner);
+        paymentSpinner = (Spinner) findViewById(R.id.paymentSpinner);
+        minPriceSpinner = (Spinner) findViewById(R.id.minPriceSpinner);
+        maxPriceSpinner = (Spinner) findViewById(R.id.maxPriceSpinner);
+
 
         bedroomsLinear = (LinearLayout) findViewById(R.id.bedroomsLinear);
         furnishingLinear = (LinearLayout) findViewById(R.id.furnishingLinear);
@@ -49,10 +79,12 @@ public class filters extends AppCompatActivity implements CompoundButton.OnCheck
         radioCommercial.setOnCheckedChangeListener(this);
         radioResidential.setOnCheckedChangeListener(this);
 
-        spinner_type = (Spinner) findViewById(R.id.typeSpinner);
+
         subCategory = null;
         filtersSet();
         btnBack.setTypeface(font);
+        setfurnishingFilter();
+
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,7 +139,6 @@ public class filters extends AppCompatActivity implements CompoundButton.OnCheck
 
     }
 
-
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
 
@@ -125,4 +156,57 @@ public class filters extends AppCompatActivity implements CompoundButton.OnCheck
         }
 
     }
+
+    public void setfurnishingFilter() {
+        OkHttpClient client = new OkHttpClient();
+        String url = "https://admin.propertydodo.ae/api/properties/furnishings";
+        Request request = new Request.Builder().url(url).build();
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(Call call, final Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    finalResult = response.body().string().toString();
+                    getJsonData(finalResult);
+                }
+            }
+        });
+    }
+
+    private void getJsonData(String response) {
+        furnishing = new ArrayList<>();
+        try {
+            array = new JSONArray(response);
+            List<String> list = new ArrayList<>();
+
+            for (int j = 0; j < array.length(); j++) {
+                FiltersFurnishing filtersFurnishing = new FiltersFurnishing();
+                filtersFurnishing.setId(array.getJSONObject(j).getString("id"));
+                filtersFurnishing.setName(array.getJSONObject(j).getString("furnishings"));
+                list.add(array.getJSONObject(j).getString("furnishings"));
+                furnishing.add(filtersFurnishing);
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        setFurnishingAdapter();
+                    }
+                });
+            }
+            furnishings = new String[list.size()];
+            furnishings = list.toArray(furnishings);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void setFurnishingAdapter() {
+        furnishingAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, furnishings);
+        furnishingSPinner.setAdapter(furnishingAdapter);
+    }
 }
+

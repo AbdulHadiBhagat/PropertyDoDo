@@ -176,7 +176,7 @@
                     android:id="@+id/minAreaSpinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:entries="@array/dropDown"
+                    android:entries="@array/AreaFromDropDown"
                     android:prompt="@string/choose"
                     style="@style/Base.Widget.AppCompat.Spinner.Underlined">
 
@@ -187,7 +187,7 @@
                     android:id="@+id/maxAreaSpinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:entries="@array/dropDown"
+                    android:entries="@array/AreaToDropDown"
                     android:prompt="@string/choose"
                     style="@style/Base.Widget.AppCompat.Spinner.Underlined">
 
@@ -224,7 +224,7 @@
                     android:id="@+id/minBedroomSpinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:entries="@array/dropDown"
+                    android:entries="@array/bedDropDown"
                     android:prompt="@string/choose"
                     style="@style/Base.Widget.AppCompat.Spinner.Underlined">
 
@@ -235,7 +235,7 @@
                     android:id="@+id/maxBedroomsSpinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:entries="@array/dropDown"
+                    android:entries="@array/bedDropDown"
                     android:prompt="@string/choose"
                     style="@style/Base.Widget.AppCompat.Spinner.Underlined">
 
@@ -328,7 +328,7 @@
                     android:id="@+id/minPriceSpinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:entries="@array/dropDown"
+                    android:entries="@array/priceDropDown"
                     android:prompt="@string/choose"
                     style="@style/Base.Widget.AppCompat.Spinner.Underlined">
 
@@ -339,7 +339,7 @@
                     android:id="@+id/maxPriceSpinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:entries="@array/dropDown"
+                    android:entries="@array/priceDropDown"
                     android:prompt="@string/choose"
                     style="@style/Base.Widget.AppCompat.Spinner.Underlined">
 
