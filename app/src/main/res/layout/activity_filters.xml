@@ -29,11 +29,12 @@
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
+                android:layout_height="36dp"
+                android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:text="@string/filter"
-                android:textSize="@dimen/_25sdp" />
+                android:textAlignment="center"
+                android:textSize="@dimen/_16sdp" />
 
             <Button
                 android:id="@+id/btnBack"
@@ -43,7 +44,7 @@
                 android:layout_alignParentTop="true"
                 android:background="@android:color/transparent"
                 android:text="@string/icon_cross"
-                android:textSize="@dimen/_20sdp"
+                android:textSize="@dimen/_17sdp"
                 android:layout_alignParentLeft="true" />
 
             <Button
@@ -55,18 +56,49 @@
                 android:background="@android:color/transparent"
                 android:text="@string/reset"
                 android:textAlignment="center"
-                android:textSize="@dimen/_9sdp"
+                android:textSize="@dimen/_12sdp"
                 android:layout_alignParentRight="true" />
 
         </RelativeLayout>
     </RelativeLayout>
     <!-- Header End-->
 
+
+    <!-- Footer Start-->
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/border_bottom"
+        android:gravity="center"
+        android:layout_gravity="center">
+
+        <LinearLayout
+            android:layout_gravity="bottom"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent">
+
+            <Button
+                android:id="@+id/filterSearch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/gray"
+                android:onClick="filterSearch"
+                android:text="Search"
+                android:textAlignment="center"
+                android:textSize="@dimen/_12sdp" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <!-- Footer End-->
+
     <!-- Body Start-->
     <ScrollView
         android:id="@+id/scroll_view"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="472dp"
         android:layout_below="@+id/header"
         android:fillViewport="true">
 
@@ -74,74 +106,53 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-
-
-            <!--<TableRow>-->
-
-                <!--<RadioButton-->
-                    <!--android:id="@+id/radioForSale"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="@string/sale"-->
-                    <!--android:layout_marginLeft="@dimen/_18sdp"-->
-                    <!--android:layout_marginTop="@dimen/_10sdp"-->
-                    <!--/>-->
-
-                <!--<RadioButton-->
-                    <!--android:id="@+id/radioForRent"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:text="@string/rent"-->
-                    <!--android:layout_marginLeft="@dimen/_22sdp"-->
-                    <!--android:layout_marginTop="@dimen/_10sdp"/>-->
-
-
-            <!--</TableRow>-->
-
             <TableRow>
+
 
                 <RadioButton
                     android:id="@+id/radioResidencial"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:text="@string/residential"
                     android:layout_marginLeft="@dimen/_18sdp"
-                    android:layout_marginTop="@dimen/_5sdp"/>
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/residential" />
 
                 <RadioButton
                     android:id="@+id/radioCommerecial"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/commercial"
-                    android:layout_marginLeft="@dimen/_22sdp"
-                    android:layout_marginTop="@dimen/_5sdp"/>
+                    android:layout_marginLeft="@dimen/_24sdp"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:text="@string/commercial" />
 
             </TableRow>
 
             <!-- Type Start-->
-            <LinearLayout
-                android:id="@+id/typeLinear">
+            <LinearLayout android:id="@+id/typeLinear">
+
                 <TextView
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Type"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:textSize="@dimen/_10sdp"
+                    android:text="Type" />
             </LinearLayout>
 
             <TableRow
                 android:id="@+id/typeRow"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content">
 
                 <Spinner
-                    android:layout_weight="1"
                     android:id="@+id/typeSpinner"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:entries="@array/dropDown"
-                    android:prompt="@string/choose"
-                    style="@style/Base.Widget.AppCompat.Spinner.Underlined">
+                    android:layout_weight="1"
+                    android:prompt="@string/choose">
 
                 </Spinner>
             </TableRow>
@@ -156,12 +167,16 @@
                     android:layout_width="@dimen/_160sdp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:textSize="@dimen/_10sdp"
                     android:text="Min. area" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
+                    android:textSize="@dimen/_10sdp"
                     android:text="Max. are" />
 
             </LinearLayout>
@@ -169,27 +184,28 @@
             <TableRow
                 android:id="@+id/areaRow"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content">
 
                 <Spinner
-                    android:layout_weight="1"
                     android:id="@+id/minAreaSpinner"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:entries="@array/AreaFromDropDown"
                     android:prompt="@string/choose"
-                    style="@style/Base.Widget.AppCompat.Spinner.Underlined">
+                    >
 
                 </Spinner>
 
                 <Spinner
-                    android:layout_weight="1"
                     android:id="@+id/maxAreaSpinner"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:entries="@array/AreaToDropDown"
-                    android:prompt="@string/choose"
-                    style="@style/Base.Widget.AppCompat.Spinner.Underlined">
+                    android:prompt="@string/choose">
 
                 </Spinner>
             </TableRow>
@@ -204,12 +220,16 @@
                     android:layout_width="@dimen/_160sdp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:textSize="@dimen/_10sdp"
                     android:text="Min. bedrooms" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
+                    android:textSize="@dimen/_10sdp"
                     android:text="Max. bedrooms" />
 
             </LinearLayout>
@@ -217,83 +237,87 @@
             <TableRow
                 android:id="@+id/bedroomsRow"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content">
 
                 <Spinner
-                    android:layout_weight="1"
                     android:id="@+id/minBedroomSpinner"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:entries="@array/bedDropDown"
-                    android:prompt="@string/choose"
-                    style="@style/Base.Widget.AppCompat.Spinner.Underlined">
+                    android:prompt="@string/choose">
 
                 </Spinner>
 
                 <Spinner
-                    android:layout_weight="1"
                     android:id="@+id/maxBedroomsSpinner"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:entries="@array/bedDropDown"
-                    android:prompt="@string/choose"
-                    style="@style/Base.Widget.AppCompat.Spinner.Underlined">
+                    android:prompt="@string/choose">
 
                 </Spinner>
             </TableRow>
 
             <!-- Furnishing Start-->
 
-            <LinearLayout
-                android:id="@+id/furnishingLinear">
+            <LinearLayout android:id="@+id/furnishingLinear">
+
                 <TextView
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Furnishing"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:text="Furnishing"
+                    android:textSize="@dimen/_10sdp" />
             </LinearLayout>
 
             <TableRow
                 android:id="@+id/furnishingRow"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content">
 
                 <Spinner
-                    android:layout_weight="1"
                     android:id="@+id/furnishingSpinner"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:entries="@array/dropDown"
-                    android:prompt="@string/choose"
-                    style="@style/Base.Widget.AppCompat.Spinner.Underlined">
+                    android:layout_weight="1"
+                    android:prompt="@string/choose">
 
                 </Spinner>
             </TableRow>
 
             <!-- Payment Start-->
 
-            <LinearLayout
-                android:id="@+id/paymentLinear">
+            <LinearLayout android:id="@+id/paymentLinear">
+
                 <TextView
-                    android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
-                    android:text="Payment"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:textSize="@dimen/_10sdp"
+                    android:text="Payment" />
             </LinearLayout>
 
             <TableRow
                 android:id="@+id/paymentRow"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content">
 
                 <Spinner
-                    android:layout_weight="1"
                     android:id="@+id/paymentSpinner"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:entries="@array/dropDown"
-                    android:prompt="@string/choose"
-                    style="@style/Base.Widget.AppCompat.Spinner.Underlined">
+                    android:layout_weight="1"
+                    android:prompt="@string/choose">
 
                 </Spinner>
             </TableRow>
@@ -308,12 +332,16 @@
                     android:layout_width="@dimen/_160sdp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:textSize="@dimen/_10sdp"
                     android:text="Min. Price" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_10sdp"
+                    android:textSize="@dimen/_10sdp"
                     android:text="Max. Price" />
 
             </LinearLayout>
@@ -321,27 +349,27 @@
             <TableRow
                 android:id="@+id/priceRow"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content">
 
                 <Spinner
-                    android:layout_weight="1"
                     android:id="@+id/minPriceSpinner"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:entries="@array/priceDropDown"
-                    android:prompt="@string/choose"
-                    style="@style/Base.Widget.AppCompat.Spinner.Underlined">
+                    android:prompt="@string/choose">
 
                 </Spinner>
 
                 <Spinner
-                    android:layout_weight="1"
                     android:id="@+id/maxPriceSpinner"
+                    style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:entries="@array/priceDropDown"
-                    android:prompt="@string/choose"
-                    style="@style/Base.Widget.AppCompat.Spinner.Underlined">
+                    android:prompt="@string/choose">
 
                 </Spinner>
             </TableRow>
@@ -350,34 +378,21 @@
 
     </ScrollView>
 
-    <!-- Footer Start-->
     <RelativeLayout
-        android:id="@+id/footer"
+        android:id="@+id/progressBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_35sdp"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/border_bottom"
-        android:gravity="center"
-        android:layout_gravity="center">
+        android:layout_height="match_parent"
+        android:background="@color/colorSecondary">
 
-        <LinearLayout
-            android:layout_gravity="bottom"
-            android:layout_height="match_parent"
-            android:layout_width="match_parent">
-            <Button
-                android:id="@+id/filterSearch"
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Search"
-                android:textAlignment="center"
-                android:textSize="@dimen/_22sdp"
-                android:background="@color/colorPrimary"/>
-
-        </LinearLayout>
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:progressBarStyleLarge"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_centerInParent="true"
+            android:progressDrawable="@drawable/circular_progress_bar" />
 
     </RelativeLayout>
-    <!-- Footer End-->
 
 </RelativeLayout>
     <!-- Body End-->

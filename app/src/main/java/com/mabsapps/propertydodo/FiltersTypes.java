@@ -1,6 +1,6 @@
 package com.mabsapps.propertydodo;
 
-public class FiltersType {
+public class FiltersTypes {
     String id;
     String name;
 

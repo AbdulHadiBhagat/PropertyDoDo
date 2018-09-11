@@ -17,82 +17,100 @@
 
     <TextView
         android:id="@+id/txtName"
-        android:layout_width="@dimen/_170sdp"
-        android:layout_height="@dimen/_20sdp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+        android:layout_width="@dimen/_178sdp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginEnd="@dimen/_30sdp"
+        android:layout_marginStart="@dimen/_110sdp"
         android:textColor="@color/black"
-        android:layout_marginRight="@dimen/_30sdp"
-        android:textSize="@dimen/_15sdp" />
+        android:textSize="@dimen/_16sdp"
+        android:textStyle="bold"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/_110sdp" />
 
-    <TextView
-        android:id="@+id/txtTitle"
-        android:layout_width="@dimen/_52sdp"
-        android:layout_height="@dimen/_22sdp"
-        android:layout_alignLeft="@+id/txtName"
-        android:layout_alignStart="@+id/txtName"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_110sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/txtName"
-        android:textColor="@color/black"
-        android:text="Villa"
-        android:textSize="@dimen/_15sdp" />
+        android:orientation="horizontal"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/_110sdp">
 
-    <TextView
-        android:id="@+id/txtBedRooms"
-        android:layout_width="@dimen/_12sdp"
-        android:layout_height="@dimen/_18sdp"
-        android:layout_alignBottom="@+id/txtTitle"
-        android:layout_toEndOf="@+id/imageBed"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_12sdp"
-        android:layout_toRightOf="@+id/imageBed" />
+        <TextView
+            android:id="@+id/txtTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_22sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="@dimen/_10sdp"
+            android:layout_height="match_parent" />
 
 
-    <ImageView
-        android:id="@+id/imageBed"
-        android:layout_width="@dimen/_22sdp"
-        android:layout_height="@dimen/_22sdp"
-        android:layout_below="@+id/txtName"
-        android:layout_toEndOf="@+id/txtTitle"
-        android:layout_toRightOf="@+id/txtTitle"
-        app:srcCompat="@drawable/icon_bed3"
-        tools:ignore="VectorDrawableCompat" />
+        <ImageView
+            android:id="@+id/imageBed"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/icon_bed3"
+            tools:ignore="VectorDrawableCompat"
+            android:layout_marginBottom="@dimen/_5sdp"/>
 
-    <ImageView
-        android:id="@+id/imageBath"
-        android:layout_width="@dimen/_22sdp"
-        android:layout_height="@dimen/_22sdp"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/txtName"
-        android:layout_marginEnd="83dp"
-        app:srcCompat="@drawable/icon_bath"
-        tools:ignore="VectorDrawableCompat"
-        android:layout_marginRight="83dp"
-        android:layout_alignParentRight="true" />
+        <Space
+            android:layout_width="@dimen/_5sdp"
+            android:layout_height="match_parent" />
 
-    <TextView
-        android:id="@+id/txtbath"
-        android:layout_width="@dimen/_12sdp"
-        android:layout_height="@dimen/_18sdp"
-        android:layout_alignBottom="@+id/txtTitle"
-        android:layout_marginStart="-83dp"
-        android:layout_toEndOf="@+id/imageBath"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_12sdp"
-        android:layout_marginLeft="-83dp"
-        android:layout_toRightOf="@+id/imageBath" />
+        <TextView
+            android:id="@+id/txtBedRooms"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_16sdp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8sdp" />
+
+        <Space
+            android:layout_width="@dimen/_5sdp"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/imageBath"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/icon_bath"
+            tools:ignore="VectorDrawableCompat"
+            android:layout_marginBottom="@dimen/_5sdp"/>
+
+        <Space
+            android:layout_width="@dimen/_5sdp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/txtbath"
+            android:layout_width="@dimen/_12sdp"
+            android:layout_height="@dimen/_16sdp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_8sdp" />
+
+    </LinearLayout>
 
 
     <TextView
         android:id="@+id/txtDescription"
-        android:layout_width="@dimen/_170sdp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/txtName"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="@dimen/_55sdp"
+        android:layout_marginStart="@dimen/_110sdp"
         android:textColor="@color/black"
-        android:textSize="@dimen/_10sdp" />
+        android:textSize="@dimen/_10sdp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="@dimen/_110sdp" />
+
+
 </RelativeLayout>

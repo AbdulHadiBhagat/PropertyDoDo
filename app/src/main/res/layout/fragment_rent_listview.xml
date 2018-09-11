@@ -5,5 +5,20 @@
     android:layout_height="match_parent"
     tools:context=".Rent_ListView_Fragment">
 
+    <RelativeLayout
+        android:id="@+id/progressBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:progressBarStyleLarge"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_centerInParent="true"
+            android:progressDrawable="@drawable/circular_progress_bar" />
+
+
+    </RelativeLayout>
 
 </FrameLayout>

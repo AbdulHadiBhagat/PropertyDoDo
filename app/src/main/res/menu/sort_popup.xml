@@ -1,4 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:id="@+id/newest"
+        android:title="Newest"/>
+
+    <item
+        android:id="@+id/priceLow"
+        android:title="Price (low)"/>
+
+    <item
+        android:id="@+id/priceHigh"
+        android:title="Price (high)"/>
+
+    <item
+        android:id="@+id/bedsLeast"
+        android:title="Beds (least)"/>
+
+    <item
+        android:id="@+id/bedsMost"
+        android:title="Beds (most)"/>
+
 </menu>

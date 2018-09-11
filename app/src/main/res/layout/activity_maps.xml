@@ -13,6 +13,75 @@
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_70sdp"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="top"
+        android:background="@drawable/border_top"
+        android:gravity="center">
+
+
+        <AutoCompleteTextView
+            android:id="@+id/autoText"
+            android:layout_width="@dimen/_235sdp"
+            android:layout_height="wrap_content"
+            android:hint="Enter location to search"
+            android:textSize="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginLeft="@dimen/_5sdp" />
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btnFilter"
+            android:layout_width="@dimen/_58sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:background="@null"
+            android:onClick="buttonFilter"
+            android:text="@string/filter"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/_10sdp" />
+        <Button
+            android:id="@+id/btnRent"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:background="@drawable/border_button"
+            android:text="@string/rent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/_20sdp" />
+
+        <Button
+            android:id="@+id/btnBuy"
+            android:layout_width="@dimen/_140sdp"
+            android:layout_height="@dimen/_22sdp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/_20sdp"
+            android:layout_alignTop="@+id/btnRent"
+            android:background="@drawable/border_button"
+            android:text="@string/buy"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="@dimen/_20sdp" />
+        <!--</LinearLayout>-->
+    </RelativeLayout>
+    <!-- Header End-->
+    <!-- Header End-->
+
+    <!-- Header Start-->
+    <RelativeLayout
+        android:id="@+id/header2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -20,64 +89,23 @@
         android:background="@drawable/border_top"
         android:gravity="center">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="top">
 
-            <android.support.v7.widget.SearchView
-                android:layout_width="@dimen/_235sdp"
-                android:layout_height="@dimen/_30sdp"
-                android:background="#e7e7e7"
-                android:layout_marginTop="@dimen/_8sdp"
-                android:layout_marginLeft="@dimen/_5sdp"
-                android:layout_marginStart="@dimen/_5sdp"
-                >
-
-            </android.support.v7.widget.SearchView>
-            <Space
-                android:layout_weight="1"
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_width="0dp"/>
-            <Button
-                android:id="@+id/btnFilter"
-                android:layout_width="@dimen/_58sdp"
-                android:layout_height="@dimen/_32sdp"
-                android:text="@string/filter"
+                android:text="@string/icon_back"
+                android:onClick="onbtnBackPressed"
                 android:textColor="@color/colorPrimary"
-                android:textStyle="bold"
-                android:background="@null"
-                android:layout_marginEnd="@dimen/_7sdp"
-                android:layout_marginRight="@dimen/_7sdp"
-                android:layout_marginTop="@dimen/_4sdp"
+                android:textSize="@dimen/_20sdp"
+                style="?android:attr/buttonBarButtonStyle"
                 />
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="bottom">
-
-            <Button
-                android:id="@+id/btnRent"
-                android:layout_width="@dimen/_140sdp"
-                android:layout_height="@dimen/_22sdp"
-                android:layout_marginBottom="@dimen/_5sdp"
-                android:background="@drawable/border_button"
-                android:text="@string/rent"
-                android:layout_marginStart="@dimen/_10sdp"
-                android:layout_marginLeft="@dimen/_10sdp"/>
-
-            <Button
-                android:id="@+id/btnBuy"
-                android:layout_width="@dimen/_140sdp"
-                android:layout_height="@dimen/_22sdp"
-                android:layout_marginBottom="@dimen/_5sdp"
-                android:background="@drawable/border_button"
-                android:text="@string/buy"
-                android:layout_marginRight="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_10sdp"/>
-        </LinearLayout>
+        </RelativeLayout>
     </RelativeLayout>
     <!-- Header End-->
 
@@ -86,16 +114,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end|bottom"
         android:layout_marginBottom="@dimen/_65sdp"
-        android:layout_marginEnd="@dimen/_11sdp"
-        android:layout_marginRight="@dimen/_11sdp">
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/btnList"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="buttonMap"
-            android:background="@drawable/border_button"
-            />
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginRight="@dimen/_10sdp">
 
         <TextView
             android:id="@+id/txtList"
@@ -104,9 +124,19 @@
             android:layout_gravity="center"
             android:text="@string/icon_map"
             android:textSize="@dimen/_25sdp"
+            android:onClick="buttonMap"
             android:elevation="@dimen/_14sdp"
             android:textColor="@color/colorPrimary"
             android:textAppearance="?android:attr/textAppearanceMedium" />
     </FrameLayout>
 
+    <FrameLayout
+        android:id="@+id/fragment_container_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorSecondary"
+        >
+    </FrameLayout>
+
 </fragment>
+

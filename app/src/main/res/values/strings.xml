@@ -17,6 +17,7 @@
     <string name="sale">Sale</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">Map</string>
+    <string name="not_found">No properties found</string>
 
     <!-- Color UNI Codes-->
     <string name="icon_heart">&#xf004;</string>
@@ -32,18 +33,13 @@
     <string name="icon_email">&#xf075;</string>
     <string name="icon_sms">&#xf0e0;</string>
     <string name="icon_cross">&#xf00d;</string>
+    <string name="icon_sort">&#xf161;</string>
 
     <!-- Array for drop down values test-->
     <string name="choose">Choose</string>
 
-    <string-array name="dropDown">
-        <item>filter1</item>
-        <item>filter2</item>
-        <item>filter3</item>
-    </string-array>
-
     <string-array name="bedDropDown">
-        <item>Bed From</item>
+        <item>None</item>
         <item>1 Bed</item>
         <item>2 Beds</item>
         <item>3 Beds</item>
@@ -157,7 +153,7 @@
     <string name="Price">Choose</string>
 
     <string-array name="priceDropDown">
-        <item>Unknown</item>
+        <item>None</item>
         <item>AED 0</item>
         <item>AED 20,000</item>
         <item>AED 30,000</item>
